@@ -47,7 +47,7 @@ export default function Portfolio() {
             </ul>
           </div>
 
-          {/* Uçan kartlar – BUTON YOK */}
+        
           <div className={styles.heroRight} aria-hidden>
             <FloatingCard
               className={`${styles.card} ${styles.cardB} ${styles.isFlip}`}
@@ -57,14 +57,14 @@ export default function Portfolio() {
               delay={280}
             />
             <FloatingCard
-              className={`${styles.card} ${styles.cardC}`}
+              className={`${styles.card} ${styles.cardC} ${styles.isFlip}`}
               title="Travelmate"
               subtitle="Geoapify • Leaflet"
               img={travelMatePortf}
               delay={420}
             />{" "}
             <FloatingCard
-              className={`${styles.card} ${styles.cardA}`}
+              className={`${styles.card} ${styles.cardA} ${styles.isFlip}`}
               title="TrendPick"
               subtitle="React • Redux • JWT"
               img={miniShopPortf}

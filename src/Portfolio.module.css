@@ -35,6 +35,7 @@ body {
   padding: 0 20px;
 }
 
+/* NAV */
 .nav {
   position: sticky;
   top: 0;
@@ -47,6 +48,7 @@ body {
   border-bottom: 1px solid var(--ring);
   backdrop-filter: saturate(120%) blur(6px);
   color: #fff;
+  background: linear-gradient(180deg, var(--bg1), var(--bg2));
 }
 .brand {
   font-weight: 700;
@@ -78,6 +80,7 @@ body {
   }
 }
 
+/* HERO */
 .hero {
   position: relative;
   color: #fff;
@@ -149,6 +152,7 @@ body {
   opacity: 0.95;
 }
 
+/* HERO: Floating cards (desktop) */
 .heroRight {
   position: relative;
   height: 440px;
@@ -166,18 +170,6 @@ body {
   opacity: 0;
   transform: translateY(-24px) rotate(-4deg) scale(0.96);
   animation: cardIn 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-.pcardFooter {
-  display: flex;
-  gap: 10px;
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid #eceff4;
-}
-.btnWide {
-  flex: 1;
-  border-radius: 12px;
-  padding: 12px 0; /* daha geniş dokunma alanı */
 }
 .cardHead {
   display: flex;
@@ -231,77 +223,31 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
+
+/* Kart konumları (desktop) */
 .cardA {
-  left: 0px;
-  top: 0px;
-  animation-delay: 0.12s;
+  left: 0;
+  top: 0;
+  transform: translateY(-24px) rotate(5deg) scale(0.96);
+  animation-delay: 0.9s;
 }
 .cardB {
-  right: -50px;
-  top: 50px;
+  right: 0;
+  top: 120px;
   transform: translateY(-24px) rotate(5deg) scale(0.96);
-  animation-delay: 0.28s;
+  animation-delay: 0.9s;
 }
 .isFlip {
   animation-name: cardInFlip;
 }
 .cardC {
-  left: 60px;
-  bottom: 0px;
-  transform: translateY(-24px) rotate(-2deg) scale(0.96);
-  animation-delay: 0.42s;
+  left: -50px;
+  bottom: 0;
+  transform: translateY(-24px) rotate(5deg) scale(0.96);
+  animation-delay: 0.9s;
 }
 
-.contact {
-  display: flex;
-  flex-wrap: wrap; 
-  gap: 5px; 
-  margin-top: 16px;
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 14px;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  background: #fff;
-  text-decoration: none;
-  color: #111827;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  white-space: nowrap; 
-}
-
-.chip:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-}
-
-@media (max-width: 640px) {
-  .chip {
-    flex: 1 1 100%; 
-    text-align: center;
-  }
-}
-
-@keyframes cardIn {
-  to {
-    opacity: 1;
-    transform: translateY(0) rotate(0) scale(1);
-  }
-}
-@keyframes cardInFlip {
-  0% {
-    opacity: 0;
-    transform: translateY(-24px) rotateY(180deg) scale(0.96);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) rotateY(0) scale(1);
-  }
-}
-
+/* PROJECTS GRID */
 .section {
   padding: 64px 0;
 }
@@ -332,6 +278,18 @@ body {
   display: grid;
   gap: 16px;
   margin-top: 24px;
+}
+
+.projectContact {
+  text-decoration: none;
+  color: #eeeeee;
+  border: 1px solid #737882;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+.projectContact:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 @media (min-width: 780px) {
   .grid {
@@ -373,17 +331,44 @@ body {
   color: #6b7280;
   font-size: 14px;
 }
-.pcardActions {
+
+/* Featured Work alt buton barı */
+.pcardFooter {
   display: flex;
   gap: 10px;
   margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eceff4;
 }
-.projectContact {
+.btnWide {
+  flex: 1;
+  border-radius: 12px;
+  padding: 12px 0;
+}
+
+/* Contact chips */
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
   text-decoration: none;
-  color: #eeeeee;
-  border: 1px solid #737882;
-  padding: 10px 10px;
-  border-radius: 10px;
+  color: #111827;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  white-space: nowrap;
+}
+.chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 .footer {
@@ -399,11 +384,72 @@ body {
   justify-content: space-between;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .card,
-  .isFlip {
-    animation: none;
+/* Animations */
+@keyframes cardIn {
+  to {
     opacity: 1;
-    transform: none;
+    transform: translateY(0) rotate(0) scale(1);
+  }
+}
+@keyframes cardInFlip {
+  0% {
+    opacity: 0;
+    transform: translateY(-24px) rotateY(180deg) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateY(0) scale(1);
+  }
+}
+
+/* === HERO FIX: Kartları küçük ve orta ekranlarda akışa al === */
+@media (max-width: 900px) {
+  .heroRight {
+    position: relative;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 16px;
+    padding-bottom: 8px;
+    pointer-events: none;
+  }
+  .card {
+    position: relative !important;
+    width: min(92%, 360px);
+    transform: none !important;
+    animation: cardIn 0.6s ease forwards;
+  }
+  .cardA,
+  .cardB,
+  .cardC {
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+  }
+  .thumb {
+    height: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    width: min(95%, 320px);
+  }
+  .thumb {
+    height: 136px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .heroRight {
+    height: 460px;
+  }
+  .card {
+    width: 320px;
+  }
+  .thumb {
+    height: 176px;
   }
 }
