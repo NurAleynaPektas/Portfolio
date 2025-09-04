@@ -47,7 +47,6 @@ export default function Portfolio() {
             </ul>
           </div>
 
-        
           <div className={styles.heroRight} aria-hidden>
             <FloatingCard
               className={`${styles.card} ${styles.cardB} ${styles.isFlip}`}
@@ -77,7 +76,7 @@ export default function Portfolio() {
       {/* FEATURED WORK – alt kısımda Live/Code var */}
       <section
         id="projects"
-        className={`${styles.section} ${styles.sectionLight}`}
+        className={`${styles.section} ${styles.sectionLight} sectionFeatured`}
       >
         <div className={styles.container}>
           <h2 className={styles.h2}>Featured Work</h2>
