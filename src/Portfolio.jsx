@@ -1,6 +1,9 @@
 import travelMatePortf from "./assets/travelMatePortf.png";
 import miniShopPortf from "./assets/miniShopPortf.png";
 import cinePortf from "./assets/cinePortf.png";
+import moneyGuardPortf from "./assets/moneyGuardPortf.png";
+import greenHarvestPortf from "./assets/greenHarvestPortf.png";
+import cinemaniaPortf from "./assets/cinemaniaPortf.png";
 import styles from "./Portfolio.module.css";
 
 export default function Portfolio() {
@@ -12,6 +15,7 @@ export default function Portfolio() {
         </a>
         <nav className={styles.links} aria-label="Primary">
           <a href="#projects">Projects</a>
+          <a href="#collab">Ortak İşlerimiz</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -61,7 +65,7 @@ export default function Portfolio() {
               subtitle="Geoapify • Leaflet"
               img={travelMatePortf}
               delay={420}
-            />{" "}
+            />
             <FloatingCard
               className={`${styles.card} ${styles.cardA} ${styles.isFlip}`}
               title="TrendPick"
@@ -73,13 +77,13 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* FEATURED WORK – alt kısımda Live/Code var */}
+      {/* My Individual Work */}
       <section
         id="projects"
         className={`${styles.section} ${styles.sectionLight} sectionFeatured`}
       >
         <div className={styles.container}>
-          <h2 className={styles.h2}>Featured Work</h2>
+          <h2 className={styles.h2}>My Individual Work</h2>
           <p className={styles.muted}>A few projects I’m proud of.</p>
 
           <div className={styles.grid}>
@@ -108,6 +112,44 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* COLLABORATIVE PROJECTS */}
+      <section
+        id="collab"
+        className={`${styles.section} ${styles.sectionLight} sectionFeatured`}
+      >
+        <div className={styles.container}>
+          <h2 className={styles.h2}>Collaborative Projects</h2>
+          <p className={styles.muted}>
+            Projects developed together with my team.
+          </p>
+
+          <div className={styles.grid}>
+            <ProjectCard
+              title="MoneyGuard"
+              stack="React • Team Work"
+              live="https://moneyguard-liart.vercel.app/"
+              code="https://github.com/Project-Kodexa/MoneyGuard"
+              img={moneyGuardPortf}
+            />
+            <ProjectCard
+              title="GreenHarvest"
+              stack="HTML • CSS"
+              live="https://d-coderss.github.io/GreenHarvest/"
+              code="https://github.com/D-Coderss/GreenHarvest"
+              img={greenHarvestPortf}
+            />
+            <ProjectCard
+              title="Cinemaniaa"
+              stack="TMDB API • Group Project"
+              live="https://betultopkan.github.io/cinemaniaa/"
+              code="https://github.com/Popcorn-Madness/cinemaniaa"
+              img={cinemaniaPortf}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
       <section
         id="about"
         className={`${styles.section} ${styles.sectionMuted}`}
@@ -136,6 +178,7 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* CONTACT */}
       <section
         id="contact"
         className={`${styles.section} ${styles.sectionLight}`}
