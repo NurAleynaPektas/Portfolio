@@ -5,7 +5,8 @@ import moneyGuardPortf from "./assets/moneyGuardPortf.png";
 import greenHarvestPortf from "./assets/greenHarvestPortf.png";
 import cinemaniaPortf from "./assets/cinemaniaPortf.png";
 import styles from "./Portfolio.module.css";
-
+import bar from "./assets/bar.png";
+import slim from "./assets/slim.png";
 export default function Portfolio() {
   return (
     <div className={styles.site}>
@@ -15,7 +16,6 @@ export default function Portfolio() {
         </a>
         <nav className={styles.links} aria-label="Primary">
           <a href="#projects">Projects</a>
-          <a href="#collab">Ortak İşlerimiz</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -43,7 +43,7 @@ export default function Portfolio() {
               </a>
             </div>
             <ul className={styles.skills} aria-label="Skills">
-              {"HTML,CSS,JavaScript,React,Redux,Node.js,JWT,REST"
+              {"HTML,CSS,JavaScript,React,Redux,Node.js,JWT,Express,MongoDB,"
                 .split(",")
                 .map((s) => (
                   <li key={s}>{s}</li>
@@ -88,19 +88,29 @@ export default function Portfolio() {
 
           <div className={styles.grid}>
             <ProjectCard
+              title="BarberBook"
+              stack="MERN • JWT • Admin Panel"
+              live="https://client-osj4.onrender.com/"
+              code="https://github.com/NurAleynaPektas/client"
+              backend="https://barber-backend-3dn6.onrender.com/"
+              backendRepo="https://github.com/NurAleynaPektas/barber-backend"
+              img={bar}
+            />
+            <ProjectCard
+              title="TrendPick"
+              stack="React • Redux • JWT"
+              live="https://mini-shop-beta.vercel.app/"
+              code="https://github.com/NurAleynaPektas/miniShop"
+              img={miniShopPortf}
+            />
+            <ProjectCard
               title="CinePlus"
               stack="TMDB API • Trailers"
               live="https://cine-flax.vercel.app/"
               code="https://github.com/NurAleynaPektas/cine"
               img={cinePortf}
             />
-            <ProjectCard
-              title="TrendPick"
-              stack="React • Redux • JWT"
-              live="https://mini-shop-lime.vercel.app/"
-              code="https://github.com/NurAleynaPektas/miniShop"
-              img={miniShopPortf}
-            />
+
             <ProjectCard
               title="Travelmate"
               stack="Geoapify • Leaflet"
@@ -108,6 +118,7 @@ export default function Portfolio() {
               code="https://github.com/NurAleynaPektas/travelmate-geoapify"
               img={travelMatePortf}
             />
+            {/* NEW: BarberBook */}
           </div>
         </div>
       </section>
@@ -144,6 +155,13 @@ export default function Portfolio() {
               live="https://betultopkan.github.io/cinemaniaa/"
               code="https://github.com/Popcorn-Madness/cinemaniaa"
               img={cinemaniaPortf}
+            />
+            <ProjectCard
+              title="SlimMom"
+              stack="React • Team Work"
+              live="https://slim-mom-frontend-2.vercel.app/"
+              code="https://github.com/Calcora/SlimMom-Frontend-2"
+              img={slim}
             />
           </div>
         </div>
@@ -229,7 +247,7 @@ function FloatingCard({ className, title, subtitle, img, delay = 0 }) {
   );
 }
 
-function ProjectCard({ title, stack, live, code, img }) {
+function ProjectCard({ title, stack, live, code, img, backend, backendRepo }) {
   return (
     <article className={styles.pcard}>
       <div className={styles.pcardThumb}>
@@ -238,24 +256,39 @@ function ProjectCard({ title, stack, live, code, img }) {
       <h3 className={styles.pcardTitle}>{title}</h3>
       <p className={styles.pcardStack}>{stack}</p>
       <div className={styles.pcardFooter}>
-        <a
-          className={`${styles.btn} ${styles.btnWide} ${styles.btnSolid}`}
-          href={live}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Open live demo of ${title}`}
-        >
-          Live
-        </a>
-        <a
-          className={`${styles.btn} ${styles.btnWide} ${styles.btnOutline}`}
-          href={code}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Open source code of ${title}`}
-        >
-          Code
-        </a>
+        {live && (
+          <a
+            className={`${styles.btn} ${styles.btnWide} ${styles.btnSolid}`}
+            href={live}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Open live demo of ${title}`}
+          >
+            Live
+          </a>
+        )}
+        {code && (
+          <a
+            className={`${styles.btn} ${styles.btnWide} ${styles.btnOutline}`}
+            href={code}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Open source code of ${title}`}
+          >
+            Code
+          </a>
+        )}
+        {backend && (
+          <a
+            className={`${styles.btn} ${styles.btnWide} ${styles.btnOutline}`}
+            href={backend}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Open backend/API of ${title}`}
+          >
+            Backend
+          </a>
+        )}
       </div>
     </article>
   );
