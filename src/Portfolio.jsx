@@ -4,6 +4,7 @@ import cinePortf from "./assets/cinePortf.png";
 import moneyGuardPortf from "./assets/moneyGuardPortf.png";
 import greenHarvestPortf from "./assets/greenHarvestPortf.png";
 import cinemaniaPortf from "./assets/cinemaniaPortf.png";
+import qrMenu from "./assets/qrMenu.png";
 import styles from "./Portfolio.module.css";
 import bar from "./assets/bar.png";
 import slim from "./assets/slim.png";
@@ -104,6 +105,13 @@ export default function Portfolio() {
               img={miniShopPortf}
             />
             <ProjectCard
+              title="QrMenu"
+              stack="React • Redux • JWT • Admin Panel • Node.js • Express"
+              live="https://qr-menuu.vercel.app/"
+              code="https://github.com/NurAleynaPektas/qrMenu"
+              img={qrMenu}
+            />
+            <ProjectCard
               title="CinePlus"
               stack="TMDB API • Trailers"
               live="https://cine-flax.vercel.app/"
@@ -143,6 +151,13 @@ export default function Portfolio() {
               img={moneyGuardPortf}
             />
             <ProjectCard
+              title="SlimMom"
+              stack="React • Team Work"
+              live="https://slim-mom-frontend-2.vercel.app/"
+              code="https://github.com/Calcora/SlimMom-Frontend-2"
+              img={slim}
+            />
+            <ProjectCard
               title="GreenHarvest"
               stack="HTML • CSS"
               live="https://d-coderss.github.io/GreenHarvest/"
@@ -155,13 +170,6 @@ export default function Portfolio() {
               live="https://betultopkan.github.io/cinemaniaa/"
               code="https://github.com/Popcorn-Madness/cinemaniaa"
               img={cinemaniaPortf}
-            />
-            <ProjectCard
-              title="SlimMom"
-              stack="React • Team Work"
-              live="https://slim-mom-frontend-2.vercel.app/"
-              code="https://github.com/Calcora/SlimMom-Frontend-2"
-              img={slim}
             />
           </div>
         </div>
