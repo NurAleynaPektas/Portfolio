@@ -1,0 +1,608 @@
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Background grid */
+.hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -4;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8),
+    transparent 95%
+  );
+}
+
+/* Purple / cyan ambient glow */
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  top: 50%;
+  left: 65%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: -3;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.16),
+    rgba(34, 211, 238, 0.04) 35%,
+    transparent 70%
+  );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+/* ========================================
+   THREE.JS SCENE
+======================================== */
+
+.heroScene {
+  position: absolute;
+  inset: 0;
+
+  z-index: -2;
+
+  pointer-events: auto;
+}
+
+.heroScene canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ========================================
+   HERO CONTENT
+======================================== */
+
+.hero__content {
+  position: relative;
+
+  z-index: 5;
+
+  width: calc(100% - 80px);
+  max-width: var(--max-width);
+
+  margin: 0 auto;
+
+  padding-top: 80px;
+
+  pointer-events: none;
+}
+
+.hero__content a {
+  pointer-events: auto;
+}
+
+/* ========================================
+   STATUS
+======================================== */
+
+.hero__status {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 28px;
+
+  padding: 8px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  color: #a9a9b6;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 1.4px;
+}
+
+.hero__statusDot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #5df0a5;
+
+  box-shadow:
+    0 0 0 4px rgba(93, 240, 165, 0.08),
+    0 0 15px rgba(93, 240, 165, 0.6);
+
+  animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+}
+
+/* ========================================
+   TITLE
+======================================== */
+
+.hero__intro {
+  margin: 0 0 5px;
+
+  color: #b3b3c0;
+
+  font-size: clamp(16px, 1.4vw, 21px);
+  font-weight: 500;
+}
+
+.hero__title {
+  max-width: 850px;
+
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(58px, 7.4vw, 118px);
+  font-weight: 600;
+
+  line-height: 0.82;
+
+  letter-spacing: -6px;
+
+  color: #f7f7fb;
+}
+
+.hero__title span {
+  margin-left: 0.8em;
+
+  color: transparent;
+
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.38);
+
+  font-weight: 400;
+}
+
+.hero__title strong {
+  position: relative;
+
+  font-weight: 600;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #bda9ff 48%,
+    #67e8f9 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+/* ========================================
+   HERO BOTTOM
+======================================== */
+
+.hero__bottom {
+  width: 100%;
+
+  margin-top: 42px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+.hero__description {
+  max-width: 520px;
+}
+
+.hero__description p {
+  margin: 0;
+
+  max-width: 470px;
+
+  color: #9898a8;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+/* ========================================
+   ACTION BUTTONS
+======================================== */
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 22px;
+}
+
+.hero__primaryBtn,
+.hero__cvBtn,
+.hero__githubBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 47px;
+
+  padding: 0 18px;
+
+  border-radius: 12px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Main CTA */
+.hero__primaryBtn {
+  color: #08080c;
+
+  background: #f4f4f7;
+
+  border: 1px solid #f4f4f7;
+
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.08);
+}
+
+.hero__primaryBtn:hover {
+  transform: translateY(-3px);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 35px rgba(167, 139, 250, 0.2),
+    0 0 25px rgba(255, 255, 255, 0.05);
+}
+
+/* CV + GitHub secondary CTA */
+.hero__cvBtn,
+.hero__githubBtn {
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hero__cvBtn:hover,
+.hero__githubBtn:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(167, 139, 250, 0.45);
+
+  background: rgba(139, 92, 246, 0.1);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.hero__primaryBtn svg,
+.hero__cvBtn svg,
+.hero__githubBtn svg {
+  flex-shrink: 0;
+
+  font-size: 15px;
+}
+
+/* ========================================
+   TECHNOLOGIES
+======================================== */
+
+.hero__tech {
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+
+  color: #72727f;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.hero__tech span {
+  position: relative;
+}
+
+.hero__tech span:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  right: -14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background: #484852;
+}
+
+/* ========================================
+   LARGE BACKGROUND TEXT
+======================================== */
+
+.hero__backgroundText {
+  position: absolute;
+
+  right: -20px;
+  bottom: -45px;
+
+  z-index: -1;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(120px, 18vw, 330px);
+  font-weight: 700;
+
+  letter-spacing: -15px;
+
+  color: rgba(255, 255, 255, 0.015);
+
+  user-select: none;
+
+  pointer-events: none;
+}
+
+/* ========================================
+   SCROLL INDICATOR
+======================================== */
+
+.hero__scroll {
+  position: absolute;
+
+  right: 40px;
+  bottom: 34px;
+
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #70707d;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  text-decoration: none;
+
+  writing-mode: vertical-rl;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .hero__content {
+    width: calc(100% - 40px);
+
+    padding-top: 90px;
+  }
+
+  .hero__title {
+    font-size: clamp(53px, 12vw, 90px);
+
+    letter-spacing: -4px;
+  }
+
+  .hero__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 28px;
+
+    margin-top: 35px;
+  }
+
+  .hero__tech {
+    flex-wrap: wrap;
+  }
+
+  .heroScene {
+    opacity: 0.65;
+
+    transform: translateX(22%);
+  }
+
+  .hero__scroll {
+    display: none;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 800px;
+    height: 100svh;
+  }
+
+  .hero__content {
+    width: calc(100% - 32px);
+  }
+
+  .hero__status {
+    margin-bottom: 22px;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+  }
+
+  .hero__intro {
+    font-size: 15px;
+  }
+
+  .hero__title {
+    font-size: clamp(46px, 14.2vw, 68px);
+
+    line-height: 0.87;
+
+    letter-spacing: -3px;
+  }
+
+  .hero__title span {
+    margin-left: 0.35em;
+  }
+
+  .hero__description {
+    max-width: 100%;
+  }
+
+  .hero__description p {
+    max-width: 100%;
+
+    font-size: 14px;
+  }
+
+  .hero__actions {
+    gap: 8px;
+  }
+
+  .hero__primaryBtn,
+  .hero__cvBtn,
+  .hero__githubBtn {
+    min-height: 44px;
+
+    padding: 0 14px;
+
+    font-size: 11px;
+  }
+
+  .hero__backgroundText {
+    display: none;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 430px) {
+  .hero__actions {
+    width: 100%;
+  }
+
+  .hero__primaryBtn {
+    width: 100%;
+  }
+
+  .hero__cvBtn,
+  .hero__githubBtn {
+    flex: 1;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__statusDot {
+    animation: none;
+  }
+
+  .hero__primaryBtn,
+  .hero__cvBtn,
+  .hero__githubBtn {
+    transition: none;
+  }
+
+  .hero__primaryBtn:hover,
+  .hero__cvBtn:hover,
+  .hero__githubBtn:hover {
+    transform: none;
+  }
+}

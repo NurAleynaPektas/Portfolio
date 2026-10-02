@@ -1,0 +1,225 @@
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+  position: relative;
+
+  width: 100%;
+
+  padding: 28px 0 32px;
+
+  background: #07070b;
+}
+
+.footer__container {
+  width: calc(100% - 80px);
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding-top: 28px;
+
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+
+  gap: 30px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ========================================
+   LEFT
+======================================== */
+
+.footer__left {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.footer__logo {
+  flex-shrink: 0;
+
+  color: #ffffff;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 19px;
+  font-weight: 700;
+
+  letter-spacing: -0.7px;
+
+  text-decoration: none;
+}
+
+.footer__logo span {
+  color: var(--purple-light);
+}
+
+.footer__left p {
+  margin: 0;
+
+  color: #5f5f6b;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 0.4px;
+}
+
+/* ========================================
+   CENTER
+======================================== */
+
+.footer__center {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  color: #5d5d69;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 1.3px;
+}
+
+.footer__center span:not(:last-child)::after {
+  content: "•";
+
+  margin-left: 14px;
+
+  color: #34343d;
+}
+
+/* ========================================
+   BACK TO TOP
+======================================== */
+
+.footer__topButton {
+  justify-self: end;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 10px 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #777783;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+
+  transition: color 0.3s ease;
+}
+
+.footer__topButton svg {
+  font-size: 14px;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.footer__topButton:hover {
+  color: #ffffff;
+}
+
+.footer__topButton:hover svg {
+  color: var(--purple-light);
+
+  transform: translateY(-4px);
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 850px) {
+  .footer__container {
+    width: calc(100% - 40px);
+
+    grid-template-columns: 1fr auto;
+  }
+
+  .footer__center {
+    display: none;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 20px 0 25px;
+  }
+
+  .footer__container {
+    width: calc(100% - 32px);
+
+    padding-top: 22px;
+
+    grid-template-columns: 1fr auto;
+
+    gap: 15px;
+  }
+
+  .footer__left {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
+  .footer__left p {
+    font-size: 8px;
+  }
+
+  .footer__topButton span {
+    display: none;
+  }
+
+  .footer__topButton {
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
+
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer__topButton,
+  .footer__topButton svg {
+    transition: none;
+  }
+
+  .footer__topButton:hover svg {
+    transform: none;
+  }
+}

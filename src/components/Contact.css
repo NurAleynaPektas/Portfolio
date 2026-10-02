@@ -1,0 +1,479 @@
+/* ========================================
+   CONTACT
+======================================== */
+
+.contact {
+  position: relative;
+  width: 100%;
+
+  padding: 150px 0 90px;
+
+  background: #07070b;
+
+  overflow: hidden;
+}
+
+.contact__container {
+  position: relative;
+  z-index: 2;
+
+  width: calc(100% - 80px);
+  max-width: 1250px;
+
+  margin: 0 auto;
+}
+
+/* ========================================
+   TOP LABEL
+======================================== */
+
+.contact__top {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 90px;
+
+  color: #6e6e7a;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.contact__top > span:first-child {
+  color: var(--cyan);
+}
+
+.contact__line {
+  flex: 1;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.02)
+  );
+}
+
+/* ========================================
+   MAIN
+======================================== */
+
+.contact__main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(300px, 0.65fr);
+
+  align-items: end;
+
+  gap: clamp(60px, 9vw, 140px);
+}
+
+/* ========================================
+   HEADLINE
+======================================== */
+
+.contact__smallText {
+  display: block;
+
+  margin-bottom: 22px;
+
+  color: #777783;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.contact__headline h2 {
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(70px, 8.5vw, 135px);
+  font-weight: 500;
+
+  line-height: 0.82;
+
+  letter-spacing: -7px;
+
+  color: #f5f5f8;
+}
+
+.contact__headline h2 span {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #bda9ff 50%,
+    #67e8f9 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+/* ========================================
+   SIDE CONTENT
+======================================== */
+
+.contact__side {
+  padding-bottom: 8px;
+}
+
+.contact__side p {
+  max-width: 360px;
+
+  margin: 0 0 30px;
+
+  color: #8e8e9a;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+/* ========================================
+   EMAIL CTA
+======================================== */
+
+.contact__emailButton {
+  width: 100%;
+  max-width: 360px;
+
+  min-height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.contact__emailButton > span {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.contact__emailButton > svg {
+  font-size: 17px;
+
+  transition: transform 0.3s ease;
+}
+
+.contact__emailButton:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(167, 139, 250, 0.4);
+
+  background: rgba(139, 92, 246, 0.09);
+
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
+.contact__emailButton:hover > svg {
+  transform: translate(3px, -3px);
+}
+
+/* ========================================
+   SOCIAL LINKS
+======================================== */
+
+.contact__links {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-top: 110px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact__link {
+  min-height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 24px;
+
+  color: #8e8e9a;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease;
+}
+
+.contact__link:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact__link > div {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.contact__link > div svg {
+  font-size: 17px;
+}
+
+.contact__link > div span {
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+}
+
+.contact__link > svg {
+  color: #555561;
+
+  font-size: 16px;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.contact__link:hover {
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.contact__link:hover > svg {
+  color: var(--purple-light);
+
+  transform: translate(3px, -3px);
+}
+
+/* ========================================
+   BACKGROUND TEXT
+======================================== */
+
+.contact__backgroundText {
+  position: absolute;
+
+  left: 50%;
+  bottom: -95px;
+
+  transform: translateX(-50%);
+
+  z-index: -1;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(180px, 27vw, 420px);
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -20px;
+
+  color: rgba(255, 255, 255, 0.012);
+
+  white-space: nowrap;
+
+  user-select: none;
+
+  pointer-events: none;
+}
+
+/* ========================================
+   AMBIENT GLOW
+======================================== */
+
+.contact::after {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  left: 35%;
+  top: 30%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.08),
+    rgba(34, 211, 238, 0.025) 40%,
+    transparent 70%
+  );
+
+  filter: blur(50px);
+
+  pointer-events: none;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+  .contact {
+    padding: 120px 0 80px;
+  }
+
+  .contact__container {
+    width: calc(100% - 40px);
+  }
+
+  .contact__top {
+    margin-bottom: 65px;
+  }
+
+  .contact__main {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .contact__headline h2 {
+    font-size: clamp(70px, 13vw, 115px);
+  }
+
+  .contact__side {
+    max-width: 500px;
+
+    margin-left: auto;
+  }
+
+  .contact__side p,
+  .contact__emailButton {
+    max-width: 100%;
+  }
+
+  .contact__links {
+    margin-top: 85px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 90px 0 60px;
+  }
+
+  .contact__container {
+    width: calc(100% - 32px);
+  }
+
+  .contact__top {
+    gap: 12px;
+
+    margin-bottom: 50px;
+
+    font-size: 9px;
+  }
+
+  .contact__smallText {
+    margin-bottom: 17px;
+
+    font-size: 9px;
+  }
+
+  .contact__headline h2 {
+    font-size: clamp(53px, 16vw, 76px);
+
+    line-height: 0.88;
+
+    letter-spacing: -4px;
+  }
+
+  .contact__main {
+    gap: 42px;
+  }
+
+  .contact__side p {
+    font-size: 13px;
+  }
+
+  .contact__emailButton {
+    min-height: 56px;
+  }
+
+  .contact__links {
+    grid-template-columns: 1fr;
+
+    margin-top: 70px;
+  }
+
+  .contact__link {
+    min-height: 68px;
+
+    padding: 0 10px;
+  }
+
+  .contact__link:not(:last-child) {
+    border-right: none;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .contact__backgroundText {
+    display: none;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__emailButton,
+  .contact__emailButton > svg,
+  .contact__link,
+  .contact__link > svg {
+    transition: none;
+  }
+
+  .contact__emailButton:hover,
+  .contact__emailButton:hover > svg,
+  .contact__link:hover > svg {
+    transform: none;
+  }
+}
